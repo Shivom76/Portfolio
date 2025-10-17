@@ -5,6 +5,7 @@ import Cards from "./components/Cards.jsx"
 import Tools from "./components/Tools.jsx"
 import Contact from "./components/Contact.jsx"
 import Projects from './components/Projects.jsx'
+import Achievements from './components/Achievements.jsx'
 // import pic from "./src/assets/pic1";
 
 import {useEffect} from 'react';
@@ -36,14 +37,14 @@ useEffect(() => {
 
 return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 to-gray-900 text-white">
-     
+    
       <Navbar />
 
       <h1 className='text-center text-6xl font-extrabold tracking-tight 
     bg-clip-text text-transparent 
     bg-gradient-to-r from-indigo-400 to-cyan-400 leading-relaxed  min-[375px]:text-4xl'>My Portfolio</h1>
 
-    <div className="flex flex-col lg:flex-row justify-center items-center p-6 m-3 max-w-5xl gap-8 bg-gray-900/50 rounded-xl shadow-2xl">
+    <div className="flex flex-col mx-auto lg:flex-row justify-center items-center p-6 m-3 max-w-5xl gap-8 bg-gray-900/50 rounded-xl shadow-2xl">
       <div className="flex-shrink-0">
         <img src="/images/pic1.jpg" alt="pic" className="w-72 h-72 object-cover rounded-full lg:rounded-lg border-4 border-indigo-400 shadow-xl"/>
       </div>
@@ -64,6 +65,8 @@ return (
       <div className='text-center mt-3'>Projects</div>
       <Projects />
       <Tools/>
+
+      <Achievements />
 
       <Contact />
 
