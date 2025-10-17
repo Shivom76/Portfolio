@@ -43,12 +43,12 @@ return (
     bg-clip-text text-transparent 
     bg-gradient-to-r from-indigo-400 to-cyan-400 leading-relaxed'>My Portfolio</h1>
 
-    <div className="flex justify-evenly items-center m-3">
-      <div className="text-center">
-        <img src="/images/pic1.jpg" alt="pic" className="h-72 rounded-lg"/>
+    <div className="flex flex-col lg:flex-row justify-center items-center p-6 m-3 max-w-6xl mx-auto gap-8 bg-gray-900/50 rounded-xl shadow-2xl">
+      <div className="flex-shrink-0">
+        <img src="/images/pic1.jpg" alt="pic" className="w-72 h-72 object-cover rounded-full lg:rounded-lg border-4 border-indigo-400 shadow-xl"/>
       </div>
       <div>
-        <p className=" text-center">Hi, I am Shivom Paul. A fullstack web Developer</p>
+        <p className="text-white text-lg lg:text-left text-center leading-relaxed">I'm Shivom Paul, a budding Full Stack MERN Developer committed to mastering modern web development. While building projects with MongoDB, Express, React, and Node.js, I also maintain flexibility with languages like Python. I believe in daily skill growth and am currently transitioning from student to professional. I am actively pursuing opportunities to collaborate on freelance projects and seeking internships where I can contribute my skills to a dedicated team or startup environment.</p>
       </div>
     </div>
 
