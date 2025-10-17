@@ -15,7 +15,7 @@ export default function Contact(){
                 <label htmlFor="name">Email: </label>
                 <input placeholder="Email" className="rounded-sm p-1 text-black" id="email"></input>
                 <br></br>
-                <button type="submit" onClick={submitForm} className="m-3 rounded-3xl p-2 px-4 bg-gradient-to-r from-cyan-400 via-blue-700 to-blue-800">Submit</button>
+                <button type="submit" onClick={submitForm} className="m-3 rounded-3xl p-2 px-4 bg-gradient-to-r from-cyan-400 via-blue-700 to-blue-800">Loading...</button>
             </form>
         </div>
     )

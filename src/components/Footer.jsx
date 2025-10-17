@@ -7,10 +7,10 @@ export default function Footer(){
             <p className="text-xs mb-4">Something written here</p>
             <hr className="w-2/3 mx-auto " />
             <div className="logos mt-3">
-                <a href="#" className="px-1"><i className="fa-brands fa-instagram opacity-70"></i></a>
-                <a href="#" className="px-1"><i className="fa-brands fa-github opacity-70"></i></a>
+                <a href="https://www.linkedin.com/in/shivom-paul-53072222b/" className="px-1"><i className="fa-brands fa-linkedin opacity-70"></i></a>  
+                <a href="https://github.com/Shivom76" className="px-1"><i className="fa-brands fa-github opacity-70"></i></a>
                 <a href="#" className="px-1"><i className="fa-brands fa-x-twitter opacity-70"></i></a>
-                <a href="#" className="px-1"><i className="fa-brands fa-facebook opacity-70"></i></a>  
+                <a href="https://www.instagram.com/_.abyssal_mist/" className="px-1"><i className="fa-brands fa-instagram opacity-70"></i></a>
             </div>
         </div>
     )
