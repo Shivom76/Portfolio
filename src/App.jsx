@@ -41,9 +41,9 @@ return (
 
       <h1 className='text-center text-6xl font-extrabold tracking-tight 
     bg-clip-text text-transparent 
-    bg-gradient-to-r from-indigo-400 to-cyan-400 leading-relaxed'>My Portfolio</h1>
+    bg-gradient-to-r from-indigo-400 to-cyan-400 leading-relaxed  min-[375px]:text-4xl'>My Portfolio</h1>
 
-    <div className="flex flex-col lg:flex-row justify-center items-center p-6 m-3 max-w-6xl mx-auto gap-8 bg-gray-900/50 rounded-xl shadow-2xl">
+    <div className="flex flex-col lg:flex-row justify-center items-center p-6 m-3 max-w-5xl gap-8 bg-gray-900/50 rounded-xl shadow-2xl">
       <div className="flex-shrink-0">
         <img src="/images/pic1.jpg" alt="pic" className="w-72 h-72 object-cover rounded-full lg:rounded-lg border-4 border-indigo-400 shadow-xl"/>
       </div>
