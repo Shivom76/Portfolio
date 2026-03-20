@@ -1,117 +1,103 @@
-import {useState} from "react"
+import { useState } from "react"
 import SkillProgress from "./SkillProgress"
-import Card from "./Card"
 
-export default function Tools({data}){
-    const [activeSkillSet,setactiveSkillSet]=useState("front")
+export default function Tools() {
+    const [activeSkillSet, setactiveSkillSet] = useState("front")
 
-    // const tools=[
-    //     {id:1, name:"Git", level:85},
-    //     {id:2, name:"Github", level:90},
-    //     {id:3, name:"Canva", level:89},
-    // ]
-
-    const tools=[
-        {id:1, name:"Git",logo:<i className="fa-brands fa-git-alt "></i> },
-        {id:2, name:"Github",logo:<i className="fa-brands fa-github"></i>,},
-        {id:3, name:"Canva",logo:<i className="fa-solid fa-pen"></i>},
+    const tools = [
+        { id: 1, name: "Git", logo: <i className="fa-brands fa-git-alt mr-2 text-orange-500"></i> },
+        { id: 2, name: "Github", logo: <i className="fa-brands fa-github mr-2 text-white"></i> },
+        { id: 3, name: "Canva", logo: <i className="fa-solid fa-pen mr-2 text-blue-400"></i> },
+        { id: 4, name: "VS Code", logo: <i className="fa-solid fa-code mr-2 text-blue-500"></i> },
     ]
 
-    const front= [
-        { id: 1, name: "React.js", level: 80 },
-        { id: 2, name: "Tailwind CSS", level: 85 },
-        { id: 3, name: "JavaScript", level: 95 },
-        { id: 4, name: "UI/UX Design", level: 75 },
-        { id: 5, name: "Bootstrap", level: 85 },
-      ];
-      
-      const back= [
-        { id: 1, name: "Node.js", level: 95 },
-        { id: 2, name: "Express", level: 86 },
-        { id: 3, name: "Next js", level: 80 },
-        { id: 4, name: "Python", level: 87 },
-      ];
-      
-      const database=[
-        { id: 1, name: "MongoDB", level: 85 },
-        { id: 2, name: "MySQL", level: 85 },
-        { id: 3, name: "PostgreSql", level: 85 },
-      ]
-
-
-    let print=(e)=>{
-        {
-        if(e.target.value=="back"){
-            // console.log(e.target.value)
-            setactiveSkillSet("back")
-        }
-        if(e.target.value=="database"){
-            // console.log(e.target.value)
-            setactiveSkillSet("database")
-        }
-        if(e.target.value=="front"){
-            // console.log(e.target.value)
-            setactiveSkillSet("front")
-        }
-    }
+    const skillSets = {
+        front: [
+            { id: 1, name: "React.js", level: 90 }, // We keep the level for the internal bar but emphasize the name
+            { id: 2, name: "Tailwind CSS", level: 95 },
+            { id: 3, name: "JavaScript (ES6+)", level: 90 },
+            { id: 4, name: "UI/UX (Figma)", level: 75 },
+            { id: 5, name: "Next.js", level: 80 },
+        ],
+        back: [
+            { id: 1, name: "Node.js", level: 90 },
+            { id: 2, name: "Express", level: 85 },
+            { id: 3, name: "REST APIs", level: 95 },
+            { id: 4, name: "Python", level: 80 },
+            { id: 5, name: "Socket.io", level: 85 },
+        ],
+        database: [
+            { id: 1, name: "MongoDB", level: 90 },
+            { id: 2, name: "MySQL", level: 80 },
+            { id: 3, name: "PostgreSQL", level: 75 },
+            { id: 4, name: "Redis", level: 70 },
+        ]
     }
 
-    const skillSets={
-        front:front,
-        back:back,
-        database:database
-    }
+    const renderSkills = skillSets[activeSkillSet]
 
-    const renderSkills=skillSets[activeSkillSet] || front
-
-    return(
-        <div className="text-center mt-3">
-            <h2 className="font-extrabold text-xl"><span className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-700 to-blue-800">Tools</span> And <span className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-700 to-blue-800">Skills</span></h2>
-            <div className="mt-3">
-                <button onClick={print} value="front" className="mx-2 px-4 py-3 rounded-lg text-sm font-semibold shadow-lg text-white 
-                bg-gradient-to-r from-indigo-400 to-cyan-400
-                hover:from-indigo-300 hover:to-cyan-300 transition duration-300">Front End</button>
-                <button onClick={print} value="back"  className="mx-2 px-4 py-3 rounded-lg text-sm font-semibold shadow-lg text-white 
-                bg-gradient-to-r from-indigo-400 to-cyan-400
-                hover:from-indigo-300 hover:to-cyan-300 transition duration-300">Back End</button>
-                <button onClick={print} value="database"  className="mx-2 px-4 py-3 rounded-lg text-sm font-semibold shadow-lg text-white 
-                bg-gradient-to-r from-indigo-400 to-cyan-400
-                hover:from-indigo-300 hover:to-cyan-300 transition duration-300">Database</button>
+    return (
+        <div className="py-20 px-6 max-w-6xl mx-auto">
+            <div className="text-center mb-12" data-aos="fade-up">
+                <h2 className="text-4xl font-bold text-white mb-4">Tech Stack & Ecosystem</h2>
+                <p className="text-slate-400">Specialized in building scalable MERN applications and IoT integrations.</p>
             </div>
 
+            {/* Navigation Tabs */}
+            <div className="flex flex-wrap justify-center gap-3 mb-10" data-aos="fade-up">
+                {Object.keys(skillSets).map((type) => (
+                    <button
+                        key={type}
+                        onClick={() => setactiveSkillSet(type)}
+                        className={`px-6 py-2 rounded-full text-sm font-bold tracking-wide transition-all duration-300 border ${
+                            activeSkillSet === type 
+                            ? "bg-blue-600 border-blue-400 text-white shadow-[0_0_15px_rgba(37,99,235,0.4)]" 
+                            : "bg-blue-950/30 border-white/10 text-slate-400 hover:border-blue-500/50"
+                        }`}
+                    >
+                        {type.toUpperCase()}
+                    </button>
+                ))}
+            </div>
 
-            <div className="skillSet flex justify-center">
-
-                <div className="w-1/2 h-72 md:w-1/3 p-4 rounded-lg bg-gray-900/50 shadow-xl m-4">
-                    <h3 className="text-xl font-bold mb-4">Tools</h3>
-                    {/* {tools.map((skill) => (
-                        <SkillProgress 
-                            key={skill.id} 
-                            skill={skill.name} 
-                            percentage={skill.level} 
-                        />
-                        ))} */}
-                        <ul>
-                        {tools.map((item)=>(
-                            <li className="my-2" key={item.id}>{item.logo}{item.name}</li>
-                            ))}
-                        </ul>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Tools Sidebar - Using a Card-like layout */}
+                <div 
+                    className="p-8 rounded-3xl bg-blue-950/10 backdrop-blur-xl border border-white/5 shadow-2xl"
+                    data-aos="fade-right"
+                >
+                    <h3 className="text-xl font-bold mb-6 text-sky-400 flex items-center">
+                        <i className="fa-solid fa-screwdriver-wrench mr-3"></i> Core Infrastructure
+                    </h3>
+                    <div className="grid grid-cols-2 gap-4">
+                        {tools.map((item) => (
+                            <div key={item.id} className="flex items-center p-3 rounded-xl bg-white/5 border border-white/5 hover:border-sky-500/30 transition-all">
+                                <span className="text-xl">{item.logo}</span>
+                                <span className="text-slate-200 font-medium ml-2">{item.name}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
-                <div className="w-1/2 h-72 md:w-1/3 p-4 rounded-lg bg-gray-900/50 shadow-xl m-4">
-                        <h3 className="text-xl font-bold mb-4">Skills</h3>
-        
-
+                {/* Skills Section - Animated List */}
+                <div 
+                    className="p-8 rounded-3xl bg-blue-950/10 backdrop-blur-xl border border-white/5 shadow-2xl"
+                    data-aos="fade-left"
+                >
+                    <h3 className="text-xl font-bold mb-6 text-sky-400 flex items-center">
+                        <i className="fa-solid fa-layer-group mr-3"></i> Proficiency
+                    </h3>
+                    <div className="space-y-2">
                         {renderSkills.map((skill) => (
                             <SkillProgress 
                                 key={skill.id} 
                                 skill={skill.name} 
                                 percentage={skill.level} 
                             />
-                            ))}
+                        ))}
+                    </div>
                 </div>
             </div>
-
         </div>
     )
 }
