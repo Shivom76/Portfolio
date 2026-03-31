@@ -111,8 +111,9 @@ function App() {
       <section id="achievements" className="py-24 px-6 border-t border-blue-900/20">
         <Achievements />
       </section>
-
-      <Contact />
+      <section id="contact">
+        <Contact />
+      </section>
       <Footer />
     </div>
   );

@@ -2,7 +2,7 @@ import "./css/Footer.css"
 
 export default function Footer(){
     return(
-        <div className="bg-black text-white text-center w-auto bottom-0 p-4">
+        <div className="bg-black text-white text-center w-auto bottom-0 p-4 mt-6">
             <h2 className="text-center mb-1">Digital design by <b>Shivom</b></h2>
             <p className="text-xs mb-4">Thanks for visiting &hearts; </p>
             <hr className="w-2/3 mx-auto " />
